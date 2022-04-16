@@ -21,21 +21,10 @@ const AskableEight=()=>{
            body:JSON.stringify(data)
        }
         
-       fetch('/auth/login',requestOptions)
+       fetch('/',requestOptions)
        .then(res=>res.json())
        .then(data=>{
            console.log(data.access_token)
-           
-           if (data.access_token){
-            
-            navigate('/')
-
-           }
-           else{
-               alert('Invalid Path')
-           }
-
-
        })
 
        reset()
