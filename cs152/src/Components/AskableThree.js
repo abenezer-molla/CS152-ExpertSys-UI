@@ -46,7 +46,7 @@ const AskableThree=()=>{
             <h2 className = "text-center mb-4 "> Third Question </h2>
             <Form>
                 <Form.Group id = "email">
-                    <Form.Label>Third Question</Form.Label>
+                    <Form.Label>What is the maximum value of time you are willing to spend (in minutes)?</Form.Label>
                     <Form.Control 
                     type = "text" 
                     placeholder='write your answer here' 
@@ -56,6 +56,11 @@ const AskableThree=()=>{
                 <br/>
                 <Form.Group>
                     <small>Click here to go to the <Link to='/fourthQ'>NEXT QUESTION</Link></small>
+                </Form.Group>
+                <br/>
+                <br/>
+                <Form.Group>
+                    <small>Go back to <Link to='/'>Page One</Link></small>
                 </Form.Group>
                 <br/>
                 <Button onClick={handleSubmit(userInput)} className = "w-100" type  = "submit">SUBMIT</Button>

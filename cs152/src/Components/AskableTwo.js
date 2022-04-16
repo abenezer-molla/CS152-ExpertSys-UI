@@ -46,7 +46,7 @@ const AskableTwo=()=>{
             <h2 className = "text-center mb-4 "> Second Question </h2>
             <Form>
                 <Form.Group id = "email">
-                    <Form.Label>Second Question</Form.Label>
+                    <Form.Label>Do you want to search for the type of food? YES or NO?</Form.Label>
                     <Form.Control 
                     type = "text" 
                     placeholder='write your answer here' 

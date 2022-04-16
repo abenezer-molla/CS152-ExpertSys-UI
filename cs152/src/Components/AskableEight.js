@@ -46,7 +46,7 @@ const AskableEight=()=>{
             <h2 className = "text-center mb-4 "> Eighth Question </h2>
             <Form>
                 <Form.Group id = "question">
-                    <Form.Label>Eighth Question</Form.Label>
+                    <Form.Label>What Is The Max Price You Are Willing To Spend(in numbers only)? </Form.Label>
                     <Form.Control 
                     type = "text" 
                     placeholder='write your answer here' 
@@ -56,6 +56,11 @@ const AskableEight=()=>{
                 <br/>
                 <Form.Group>
                     <small>Go back to the <Link to='/'>First Page to Start Over</Link></small>
+                </Form.Group>
+                <br/>
+                <br/>
+                <Form.Group>
+                    <small>Go back to <Link to='/'>Page One</Link></small>
                 </Form.Group>
                 <br/>
                 <Button onClick={handleSubmit(userInput)} className = "w-100" type  = "submit">SUBMIT</Button>

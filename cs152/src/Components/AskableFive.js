@@ -46,7 +46,7 @@ const AskableFive=()=>{
             <h2 className = "text-center mb-4 "> Fifth Question </h2>
             <Form>
                 <Form.Group id = "email">
-                    <Form.Label>Fifth Question</Form.Label>
+                    <Form.Label>What type of cousine are you seeking? Examples are - ['Vietnamese', 'Asian', 'Middle Eastern', 'American', 'Mexican', 'none' ...]</Form.Label>
                     <Form.Control 
                     type = "text" 
                     placeholder='write your answer here' 
@@ -56,6 +56,11 @@ const AskableFive=()=>{
                 <br/>
                 <Form.Group>
                     <small>Click here to go to the <Link to='/sixthQ'>NEXT QUESTION</Link></small>
+                </Form.Group>
+                <br/>
+                <br/>
+                <Form.Group>
+                    <small>Go back to <Link to='/'>Page One</Link></small>
                 </Form.Group>
                 <br/>
                 <Button onClick={handleSubmit(userInput)} className = "w-100" type  = "submit">SUBMIT</Button>

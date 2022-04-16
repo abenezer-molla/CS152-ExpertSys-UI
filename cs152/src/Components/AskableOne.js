@@ -46,7 +46,7 @@ const AskableOne=()=>{
             <h2 className = "text-center mb-4 "> First Question </h2>
             <Form>
                 <Form.Group id = "email">
-                    <Form.Label>First Question</Form.Label>
+                    <Form.Label> Do you want to search for ingredients? YES or NO?</Form.Label>
                     <Form.Control 
                     type = "text" 
                     placeholder='write your answer here' 

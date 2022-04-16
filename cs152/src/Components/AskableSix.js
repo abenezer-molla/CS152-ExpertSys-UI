@@ -46,7 +46,7 @@ const AskableSix=()=>{
             <h2 className = "text-center mb-4 "> Sixth Question </h2>
             <Form>
                 <Form.Group id = "email">
-                    <Form.Label>Sixth Question</Form.Label>
+                    <Form.Label>Are you looking for a specific dishtype? Examples are - ['lunch', 'main course', 'main dish', 'dinner', 'none'...]</Form.Label>
                     <Form.Control 
                     type = "text" 
                     placeholder='write your answer here' 
@@ -56,6 +56,11 @@ const AskableSix=()=>{
                 <br/>
                 <Form.Group>
                     <small>Click here to go to the <Link to='/seventhQ'>NEXT QUESTION</Link></small>
+                </Form.Group>
+                <br/>
+                <br/>
+                <Form.Group>
+                    <small>Go back to <Link to='/'>Page One</Link></small>
                 </Form.Group>
                 <br/>
                 <Button onClick={handleSubmit(userInput)} className = "w-100" type  = "submit">SUBMIT</Button>

@@ -46,7 +46,7 @@ const AskableSeven=()=>{
             <h2 className = "text-center mb-4 "> Seventh Question </h2>
             <Form>
                 <Form.Group id = "question">
-                    <Form.Label>Seventh Question</Form.Label>
+                    <Form.Label>Any dietary preferces that we should be aware of? Examples are - ['dairyFree', 'glutenFree', 'lowFodmap', 'none'...]</Form.Label>
                     <Form.Control 
                     type = "text" 
                     placeholder='write your answer here' 
@@ -56,6 +56,11 @@ const AskableSeven=()=>{
                 <br/>
                 <Form.Group>
                     <small>Click here to go to the <Link to='/eighthQ'>NEXT QUESTION</Link></small>
+                </Form.Group>
+                <br/>
+                <br/>
+                <Form.Group>
+                    <small>Go back to <Link to='/'>Page One</Link></small>
                 </Form.Group>
                 <br/>
                 <Button onClick={handleSubmit(userInput)} className = "w-100" type  = "submit">SUBMIT</Button>
