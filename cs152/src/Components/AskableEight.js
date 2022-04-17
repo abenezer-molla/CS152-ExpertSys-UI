@@ -8,12 +8,6 @@ const AskableEight=()=>{
 
     const {register,handleSubmit,reset,formState:{errors}}=useForm()
     const navigate = useNavigate()
-    const options = [
-        
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-    ]
     
 
     const userInput=(data)=>{
@@ -43,7 +37,7 @@ const AskableEight=()=>{
                 <Form.Group id = "question">
                     <Form.Label>What Is The Max Price You Are Willing To Spend(in numbers only)? </Form.Label>
     
-                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
+                    <input class="form-control form-control-md" type="number" placeholder="price in USD" required name="price"></input>
                 </Form.Group>
                 <br/>
                 <Form.Group>

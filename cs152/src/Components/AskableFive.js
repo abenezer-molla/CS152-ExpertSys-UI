@@ -9,9 +9,17 @@ const AskableFive=()=>{
     const {register,handleSubmit,reset,formState:{errors}}=useForm()
     const navigate = useNavigate()
     const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
+        { value: 'Vietnamese', label: 'Vietnamese' },
+        { value: 'Asian', label: 'Asian' },
+        { value: 'Middle Eastern', label: 'Middle Eastern' },
+        { value: 'Mexican', label: 'Mexican' },
+        { value: 'Mediterranean', label: 'Mediterranean' },
+        { value: 'French', label: 'French' },
+        { value: 'European', label: 'European' },
+        { value: 'American', label: 'American' },
+        { value: 'Asian', label: 'Asian' },
+        { value: 'Italian', label: 'Italian' },
+        { value: 'none', label: 'none' }
     ]
     
 
@@ -40,7 +48,7 @@ const AskableFive=()=>{
             <h2 className = "text-center mb-4 "> Fifth Question </h2>
             <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
-                    <Form.Label>What type of cousine are you seeking? Examples are - ['Vietnamese', 'Asian', 'Middle Eastern', 'American', 'Mexican', 'none' ...]</Form.Label>
+                    <Form.Label> What type of cuisine are you seeking? Examples are </Form.Label>
                     <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>

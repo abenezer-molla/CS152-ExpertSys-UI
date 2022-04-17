@@ -8,12 +8,8 @@ const AskableThree=()=>{
 
     const {register,handleSubmit,reset,formState:{errors}}=useForm()
     const navigate = useNavigate()
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-    ]
-    
+    const options = []
+
 
     const userInput=(data)=>{
        console.log(data)
@@ -41,7 +37,8 @@ const AskableThree=()=>{
             <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
                     <Form.Label>What is the maximum value of time you are willing to spend (in minutes)?</Form.Label>
-                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
+                    <input class="form-control form-control-md" type="number" placeholder="Time in minutes" required name="time"></input>
+                    
                 </Form.Group>
                 <br/>
                 <Form.Group>

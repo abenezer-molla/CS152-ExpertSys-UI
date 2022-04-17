@@ -9,10 +9,34 @@ const AskableOne=()=>{
 
     const options = [
 
+        
+
         /// the ones below are place holder selection values. I will replace them with the ones from KB tomorrow morning. It's almost 2am now. 
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
+        { value: 'asafetida', label: 'asafetida' },
+        { value: 'dried chickpeas', label: 'dried chickpeas' },
+        { value: 'fresh chives', label: 'fresh chives' },
+        { value: 'fresh ginger', label: 'fresh ginger' },
+        { value: 'fresh parsley', label: 'fresh parsley' },
+        { value: 'garlic', label: 'garlic' },
+        { value: 'ground coriander', label: 'ground coriander' },
+        { value: 'ground pepper', label: 'ground pepper' },
+        { value: 'juice of lemon', label: 'juice of lemon' },
+        { value: 'olive oil', label: 'olive oil' },
+        { value: 'red chilies', label: 'red chilies' },
+        { value: 'sea salt', label: 'sea salt' },
+        { value: 'tahini', label: 'tahini' },
+        { value: 'turmeric', label: 'turmeric' },
+        { value: 'butter leaf lettuce', label: 'butter leaf lettuce' },
+        { value: 'carrots', label: 'carrots' },
+        { value: 'ginger', label: 'ginger' },
+        { value: 'hoisin sauce', label: 'hoisin sauce' },
+        { value: 'jicama', label: 'jicama' },
+        { value: 'red bell pepper', label: 'red bell pepper' },
+        { value: 'rice paper', label: 'rice paper' },
+        { value: 'spring roll paper', label: 'spring roll paper' },
+        { value: 'thai basil', label: 'thai basil' },
+        { value: 'saracha', label: 'saracha' }
+
     ]
 
     const {register,handleSubmit,reset,formState:{errors}}=useForm()

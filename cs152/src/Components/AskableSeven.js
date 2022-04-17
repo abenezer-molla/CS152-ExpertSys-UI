@@ -9,10 +9,15 @@ const AskableSeven=()=>{
     const {register,handleSubmit,reset,formState:{errors}}=useForm()
     const navigate = useNavigate()
     const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
+        { value: 'dairyFree', label: 'dairyFree' },
+        { value: 'glutenFree', label: 'glutenFree' },
+        { value: 'lowFodmap', label: 'lowFodmap' },
+        { value: 'glutenFree', label: 'glutenFree' },
+        { value: 'vegetarian', label: 'vegetarian' },
+        { value: 'vegan', label: 'vegan' },
+        { value: 'none', label: 'none' }
     ]
+    // Examples are - ['dairyFree', 'glutenFree', 'lowFodmap', 'none'...]
     
 
     const userInput=(data)=>{
@@ -40,7 +45,7 @@ const AskableSeven=()=>{
             <h2 className = "text-center mb-4 "> Seventh Question </h2>
             <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "question">
-                    <Form.Label>Any dietary preferces that we should be aware of? Examples are - ['dairyFree', 'glutenFree', 'lowFodmap', 'none'...]</Form.Label>
+                    <Form.Label>Any dietary preferces that we should be aware of?</Form.Label>
                     <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>

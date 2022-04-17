@@ -9,9 +9,15 @@ const AskableSix=()=>{
     const {register,handleSubmit,reset,formState:{errors}}=useForm()
     const navigate = useNavigate()
     const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
+        { value: 'lunch', label: 'lunch' },
+        { value: 'main course', label: 'main course' },
+        { value: 'dinner', label: 'dinner' },
+        { value: 'side dish', label: 'side dish' },
+        { value: 'salad', label: 'salad' },
+        { value: 'brunch', label: 'brunch' },
+        { value: 'brunch', label: 'brunch' },
+        { value: 'soup', label: 'soup' },
+        { value: 'none', label: 'none' }
     ]
     
 

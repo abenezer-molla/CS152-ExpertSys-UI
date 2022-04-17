@@ -40,8 +40,8 @@ const AskableFour=()=>{
             <h2 className = "text-center mb-4 "> Fourth Question </h2>
             <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
-                    <Form.Label>What is the maximum value of calorie you want to get from the food(in numbers only)?</Form.Label>
-                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
+                    <Form.Label>What is the maximum value of calorie you want to get from the food?</Form.Label>
+                    <input class="form-control form-control-md" type="number" placeholder="Calories in numbers" required name="calories"></input>
                 </Form.Group>
                 <br/>
                 <Form.Group>
