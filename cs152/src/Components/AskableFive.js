@@ -29,7 +29,7 @@ const AskableFive=()=>{
             <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
                     <Form.Label> What type of cuisine are you seeking? Examples are </Form.Label>
-                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
+                    <Select tokenSeparators={['/',',',';'," "]}  mode="tags"  isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>
                 <Form.Group>

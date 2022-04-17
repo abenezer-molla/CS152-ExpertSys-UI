@@ -28,7 +28,7 @@ const AskableSeven=()=>{
             <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "question">
                     <Form.Label>Any dietary preferces that we should be aware of?</Form.Label>
-                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
+                    <Select tokenSeparators={['/',',',';'," "]}  mode="tags"  isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>
                 <Form.Group>

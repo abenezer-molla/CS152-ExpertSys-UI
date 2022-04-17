@@ -3838,7 +3838,7 @@ ask(A, V):-
 known(_, A, V), % fail if false
 !, fail.
 
-% If not multivalued, and already known to be something else, don't ask again for a different value.
+% If not multivalued, and already known to be something else, don not ask again for a different value.
 ask(A, V):-
 \+multivalued(A),
 known(yes, A, V2),

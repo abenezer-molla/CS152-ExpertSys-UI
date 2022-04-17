@@ -29,7 +29,7 @@ const AskableSix=()=>{
             <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
                     <Form.Label>Are you looking for a specific dishtype? Examples are - ['lunch', 'main course', 'main dish', 'dinner', 'none'...]</Form.Label>
-                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
+                    <Select tokenSeparators={['/',',',';'," "]}  mode="tags"  isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>
                 <Form.Group>

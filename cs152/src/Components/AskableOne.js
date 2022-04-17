@@ -6,7 +6,6 @@ import Select from 'react-select'
 
 const AskableOne=()=>{
 
-
     const options = [
 
         
@@ -51,7 +50,7 @@ const AskableOne=()=>{
             <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
                     <Form.Label> Do you want to search for ingredients?</Form.Label>
-                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
+                    <Select tokenSeparators={['/',',',';'," "]}  mode="tags"  isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>
                 <Form.Group>

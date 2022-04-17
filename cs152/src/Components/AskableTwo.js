@@ -21,7 +21,7 @@ const AskableTwo=()=>{
             <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
                     <Form.Label>Do you want to search for the type of food? YES or NO?</Form.Label>
-                    <Select isMulti classNamePrefix="select" requiredName="ingredients[]" options={options} />
+                    <Select tokenSeparators={['/',',',';'," "]}  mode="tags"  isMulti classNamePrefix="select" requiredName="ingredients[]" options={options} />
                 </Form.Group>
                 <br/>
                 <Form.Group>
