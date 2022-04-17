@@ -68,15 +68,6 @@ for index, row in recipes_df.iterrows():
 
 app = Flask(__name__)
 
-@app.route('/search',  methods=["GET"])
-def index():
-    prolog.query("retractall(ingredient(_))")
-    prolog.query("retractall(time(_))")
-    prolog.query("retractall(calories(_))")
-
-    return render_template('trial.html', ingredients = ingredients)
-
-
 @app.route('/results', methods = ['POST'])
 def results():
     available_ingredients = request.form.getlist('ingredients[]')
@@ -94,7 +85,7 @@ def results():
         recipe = {"id":soln["X"], "title":soln["Y"], "url":soln["Z"], "minutes":soln["K"], "calories":soln["L"]}
         recipes.append(recipe)
 
-    return render_template('resTrial.html', recipes = recipes)
+    return recipes
 
 
 if __name__ == '__main__':

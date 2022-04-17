@@ -21,25 +21,7 @@ const AskableSix=()=>{
     ]
     
 
-    const userInput=(data)=>{
-       console.log(data)
 
-       const requestOptions={
-           method:"POST",
-           headers:{
-               'content-type':'application/json'
-           },
-           body:JSON.stringify(data)
-       }
-        
-       fetch('/',requestOptions)
-       .then(res=>res.json())
-       .then(data=>{
-           console.log(data.access_token)
-       })
-
-       reset()
-    }
   return (
     <Card>
         <Card.Body>

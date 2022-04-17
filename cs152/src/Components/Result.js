@@ -11,13 +11,9 @@ const Result=(props)=>{
     const [eventList, setEventList] = useState([]);
     const {reset}=useForm()
     const [show,setShow]=useState(false)
-  
-  
-  
+
     useEffect(() => {
-      //e.preventDefault();
-      // GET request using fetch inside useEffect React hook
-      fetch('/results')
+      fetch('/search')
           .then(response => response.json())
           .then(data => {
             setEventList(data.event)
