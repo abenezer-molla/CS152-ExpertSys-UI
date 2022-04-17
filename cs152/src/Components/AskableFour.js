@@ -2,12 +2,17 @@
 import {Form, Button, Card} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
-
+import Select from 'react-select'
 
 const AskableFour=()=>{
 
     const {register,handleSubmit,reset,formState:{errors}}=useForm()
     const navigate = useNavigate()
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+    ]
     
 
     const userInput=(data)=>{
@@ -21,21 +26,10 @@ const AskableFour=()=>{
            body:JSON.stringify(data)
        }
         
-       fetch('/auth/login',requestOptions)
+       fetch('/',requestOptions)
        .then(res=>res.json())
        .then(data=>{
            console.log(data.access_token)
-           
-           if (data.access_token){
-            
-            navigate('/')
-
-           }
-           else{
-               alert('Invalid Path')
-           }
-
-
        })
 
        reset()
@@ -44,14 +38,10 @@ const AskableFour=()=>{
     <Card>
         <Card.Body>
             <h2 className = "text-center mb-4 "> Fourth Question </h2>
-            <Form>
+            <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
                     <Form.Label>What is the maximum value of calorie you want to get from the food(in numbers only)?</Form.Label>
-                    <Form.Control 
-                    type = "text" 
-                    placeholder='write your answer here' 
-                    {...register('text',{required:true})}
-                    />
+                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>
                 <Form.Group>
@@ -63,7 +53,7 @@ const AskableFour=()=>{
                     <small>Go back to <Link to='/'>Page One</Link></small>
                 </Form.Group>
                 <br/>
-                <Button onClick={handleSubmit(userInput)} className = "w-100" type  = "submit">SUBMIT</Button>
+                <Button className = "w-100" type  = "submit">SUBMIT</Button>
             </Form>
         </Card.Body>
     </Card>

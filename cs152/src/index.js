@@ -15,6 +15,7 @@ import AskableFive from './Components/AskableFive';
 import AskableSix from './Components/AskableSix';
 import AskableSeven from './Components/AskableSeven';
 import AskableEight from './Components/AskableEight';
+import Result from './Components/Result';
 import {Container} from 'react-bootstrap'
 
 function App () {
@@ -32,6 +33,7 @@ function App () {
                 <Route exact path="/sixthQ" element={<AskableSix/>}/>
                 <Route exact path="/seventhQ" element={<AskableSeven/>}/>
                 <Route exact path="/eighthQ" element={<AskableEight/>}/>
+                <Route exact path="/result" element={<Result/>}/>
       
       
             </Routes>
@@ -40,6 +42,5 @@ function App () {
         </Router>
     )
 }
-
 
 ReactDOM.render(<App/>,document.getElementById('root'))

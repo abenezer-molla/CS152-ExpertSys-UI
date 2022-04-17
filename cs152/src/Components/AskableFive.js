@@ -2,12 +2,17 @@
 import {Form, Button, Card} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
-
+import Select from 'react-select'
 
 const AskableFive=()=>{
 
     const {register,handleSubmit,reset,formState:{errors}}=useForm()
     const navigate = useNavigate()
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+    ]
     
 
     const userInput=(data)=>{
@@ -33,14 +38,10 @@ const AskableFive=()=>{
     <Card>
         <Card.Body>
             <h2 className = "text-center mb-4 "> Fifth Question </h2>
-            <Form>
+            <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
                     <Form.Label>What type of cousine are you seeking? Examples are - ['Vietnamese', 'Asian', 'Middle Eastern', 'American', 'Mexican', 'none' ...]</Form.Label>
-                    <Form.Control 
-                    type = "text" 
-                    placeholder='write your answer here' 
-                    {...register('text',{required:true})}
-                    />
+                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>
                 <Form.Group>
@@ -52,7 +53,7 @@ const AskableFive=()=>{
                     <small>Go back to <Link to='/'>Page One</Link></small>
                 </Form.Group>
                 <br/>
-                <Button onClick={handleSubmit(userInput)} className = "w-100" type  = "submit">SUBMIT</Button>
+                <Button className = "w-100" type  = "submit">SUBMIT</Button>
             </Form>
         </Card.Body>
     </Card>

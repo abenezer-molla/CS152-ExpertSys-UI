@@ -2,9 +2,18 @@
 import {Form, Button, Card} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
-
+import Select from 'react-select'
 
 const AskableOne=()=>{
+
+
+    const options = [
+
+        /// the ones below are place holder selection values. I will replace them with the ones from KB tomorrow morning. It's almost 2am now. 
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+    ]
 
     const {register,handleSubmit,reset,formState:{errors}}=useForm()
     const navigate = useNavigate()
@@ -33,14 +42,10 @@ const AskableOne=()=>{
     <Card>
         <Card.Body>
             <h2 className = "text-center mb-4 "> First Question </h2>
-            <Form>
+            <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "email">
-                    <Form.Label> Do you want to search for ingredients? YES or NO?</Form.Label>
-                    <Form.Control 
-                    type = "text" 
-                    placeholder='write your answer here' 
-                    {...register('text',{required:true})}
-                    />
+                    <Form.Label> Do you want to search for ingredients?</Form.Label>
+                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>
                 <Form.Group>
@@ -48,7 +53,7 @@ const AskableOne=()=>{
                 </Form.Group>
                 <br/>
 
-                <Button onClick={handleSubmit(userInput)} className = "w-100" type  = "submit">SUBMIT</Button>
+                <Button className = "w-100" type  = "submit">SUBMIT</Button>
             </Form>
         </Card.Body>
     </Card>

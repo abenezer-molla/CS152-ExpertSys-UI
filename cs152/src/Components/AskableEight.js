@@ -2,12 +2,18 @@
 import {Form, Button, Card} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
-
+import Select from 'react-select'
 
 const AskableEight=()=>{
 
     const {register,handleSubmit,reset,formState:{errors}}=useForm()
     const navigate = useNavigate()
+    const options = [
+        
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+    ]
     
 
     const userInput=(data)=>{
@@ -33,14 +39,11 @@ const AskableEight=()=>{
     <Card>
         <Card.Body>
             <h2 className = "text-center mb-4 "> Eighth Question </h2>
-            <Form>
+            <Form method="POST" action="{{ url_for('results') }}">
                 <Form.Group id = "question">
                     <Form.Label>What Is The Max Price You Are Willing To Spend(in numbers only)? </Form.Label>
-                    <Form.Control 
-                    type = "text" 
-                    placeholder='write your answer here' 
-                    {...register('text',{required:true})}
-                    />
+    
+                    <Select isMulti requiredName="ingredients[]" classNamePrefix="select" options={options} />
                 </Form.Group>
                 <br/>
                 <Form.Group>
@@ -49,10 +52,15 @@ const AskableEight=()=>{
                 <br/>
                 <br/>
                 <Form.Group>
+                    <small>Go to<Link to='/result'>Results Page</Link></small>
+                </Form.Group>
+                <br/>
+                <br/>
+                <Form.Group>
                     <small>Go back to <Link to='/'>Page One</Link></small>
                 </Form.Group>
                 <br/>
-                <Button onClick={handleSubmit(userInput)} className = "w-100" type  = "submit">SUBMIT</Button>
+                <Button className = "w-100" type  = "submit">SUBMIT</Button>
             </Form>
         </Card.Body>
     </Card>
