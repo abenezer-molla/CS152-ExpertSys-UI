@@ -68,6 +68,24 @@ for index, row in recipes_df.iterrows():
 
 app = Flask(__name__)
 
+@app.route('/results',  methods=["GET"])
+
+def index():
+    q1 = prolog.query("retractall(ingredient(_))")
+    q2 = prolog.query("retractall(time(_))")
+    q3 = prolog.query("retractall(calories(_))")
+
+    event_list = []
+    for event in q1:
+        event_list.append(event)
+    for event in q2:
+        event_list.append(event)
+    for event in q3:
+        event_list.append(event)
+
+    return {'event': event_list}
+
+
 @app.route('/results', methods = ['POST'])
 def results():
     available_ingredients = request.form.getlist('ingredients[]')

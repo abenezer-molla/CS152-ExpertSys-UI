@@ -13,7 +13,7 @@ const Result=(props)=>{
     const [show,setShow]=useState(false)
 
     useEffect(() => {
-      fetch('/search')
+      fetch('/results')
           .then(response => response.json())
           .then(data => {
             setEventList(data.event)
